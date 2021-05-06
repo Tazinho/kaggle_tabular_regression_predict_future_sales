@@ -1,0 +1,8 @@
+# install.packages("renv")
+# renv::init()
+# install.packages("tidyverse")
+# install.packages("data.table")
+# install.packages("lobstr")
+# install.packages("pryr")
+library(tidyverse)
+library(lubridate)
