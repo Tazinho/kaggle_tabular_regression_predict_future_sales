@@ -9,13 +9,15 @@
 df_train <- data.table::fread("data/input/sales_train.csv",
                               data.table = FALSE) %>% 
   as_tibble() %>% 
-  select(-date_block_num) %>% 
-  mutate(date = dmy(date))
+  rename(m_nr = date_block_num) %>% 
+  mutate(date = dmy(date)) %>% 
+  mutate(m_nr = m_nr + 1L)
 
 df_test <- data.table::fread("data/input/test.csv", 
                              data.table = FALSE) %>% 
   as_tibble() %>% 
-  select(-ID) 
+  select(-ID) %>% 
+  mutate(m_nr = 35L)
 # - Submit in the form
 df_ss <- data.table::fread("data/input/sample_submission.csv", 
                            data.table = FALSE) %>% 
